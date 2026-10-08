@@ -1,6 +1,7 @@
 const addTodoBtn = document.getElementById("addTodoBtn");
 const inputTag = document.getElementById("todoInput");
 const todoListUl = document.getElementById("todoList");
+
 let todoText;//this should be populated when the user clicks on add button
 let todos = [];
 //If we have todos in the localStorage, we will read it
@@ -35,3 +36,28 @@ addTodoBtn.addEventListener("click", ()=> {
 });
 
 populateTodos()
+
+const todoCheckboxes = document.querySelectorAll(".todo-checkbox");
+
+todoCheckboxes.forEach((element)=> {
+    element.addEventListener("click", (e)=>{
+        if (e.target.checked){
+            element.parentNode.classList.add("completed");
+        }
+        else {
+            element.parentNode.classList.remove("completed");
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
